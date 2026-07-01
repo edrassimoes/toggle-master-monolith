@@ -82,7 +82,7 @@ Para facilitar o desenvolvimento, o projeto está configurado para rodar com Doc
 4.  **Verifique se a aplicação está no ar:**
     Abra um novo terminal e execute o seguinte comando `curl`:
     ```bash
-    curl http://localhost:5000/health
+    curl http://localhost:5001/health
     ```
     Você deve receber a seguinte resposta:
     ```json
@@ -99,7 +99,7 @@ Para facilitar o desenvolvimento, o projeto está configurado para rodar com Doc
 
 ### Endpoints da API
 
-Você pode usar o Postman ou `curl` para interagir com a API rodando localmente (`http://localhost:5000`) ou na sua instância EC2 (`http://<ip-publico-ec2>:5000`).
+Você pode usar o Postman ou `curl` para interagir com a API rodando localmente (`http://localhost:5001`) ou na sua instância EC2 (`http://<ip-publico-ec2>:5000`).
 
 | Método | Endpoint                    | Body (Exemplo)                           | Descrição                      |
 | :----- | :-------------------------- | :--------------------------------------- | :------------------------------- |
@@ -117,7 +117,7 @@ Abra seu terminal e utilize os comandos abaixo para interagir com a API.
 curl -X POST \
   -H "Content-Type: application/json" \
   -d '{"name": "new-feature", "is_enabled": true}' \
-  http://localhost:5000/flags
+  http://localhost:5001/flags
 ```
 
 **Saída esperada:** 
@@ -129,7 +129,7 @@ curl -X POST \
 
 **2. Listar todas as flags:**
 ```bash
-curl -X GET http://localhost:5000/flags
+curl -X GET http://localhost:5001/flags
 ```
 
 **Saída esperada:** 
@@ -144,7 +144,7 @@ curl -X GET http://localhost:5000/flags
 
 **3. Consultar uma flag específica (`new-feature`):**
 ```bash
-curl -X GET http://localhost:5000/flags/new-feature
+curl -X GET http://localhost:5001/flags/new-feature
 ```
 
 **Saída esperada:** 
@@ -160,7 +160,7 @@ curl -X GET http://localhost:5000/flags/new-feature
 curl -X PUT \
   -H "Content-Type: application/json" \
   -d '{"is_enabled": false}' \
-  http://localhost:5000/flags/new-feature
+  http://localhost:5001/flags/new-feature
 ```
 
 **Saída esperada:** 
